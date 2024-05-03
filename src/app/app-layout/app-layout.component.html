@@ -1,22 +1,33 @@
-<header class="h-2rem bg-purple-900">
-  <div class="flex justify-content-between align-items-center" id="vkHeader">
-    <span id="vkLogo">
-      <img src="assets/icons/vkLogo.svg" alt="vk-logo" class="w-3rem" />
-    </span>
-    <div class="flex justify-content-around w-3">
-      @for(item of menuItems;track item){
-      <span
-        (click)="menuClick(item.value)"
-        [routerLink]="'/' + item.value"
-        routerLinkActive="active"
-        class="text-indigo-200 cursor-pointer"
-        >{{ item.display }}</span
-      >
-      }
-    </div>
-  </div>
-</header>
 <div>
-  <router-outlet></router-outlet>
+  <header class="h-2rem bg-purple-900 align-items-center flex">
+    <div
+      class="flex justify-content-center align-items-center w-full"
+      id="vkHeader"
+    >
+      @if(isLogoHidden){
+      <span id="vkLogo">
+        <img src="assets/icons/vkLogo.svg" alt="vk-logo" class="w-3rem" />
+      </span>
+      }
+      <div class="w-6">
+        <div class="flex justify-content-around">
+          @for(item of menuItems;track item){
+          <span
+            (click)="menuClick(item.value)"
+            [routerLink]="'/' + item.value"
+            routerLinkActive="active"
+            class="text-indigo-200 cursor-pointer"
+            >{{ item.display }}</span
+          >
+          }
+        </div>
+      </div>
+    </div>
+  </header>
+  <div>
+    <vk-home></vk-home>
+    <!-- <vk-about></vk-about> -->
+  </div>
 </div>
-<footer></footer>
+
+<!-- https://stackblitz.com/edit/angular-scroll-spy-routing?file=app%2Fhappy-scrolling.component.ts -->
