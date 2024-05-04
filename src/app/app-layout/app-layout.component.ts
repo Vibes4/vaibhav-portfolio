@@ -9,6 +9,8 @@ import {
 import { Subscription, filter } from 'rxjs';
 import { HomeComponent } from '../home/home.component';
 import { AboutComponent } from '../about/about.component';
+import { DetailsComponent } from '../details/details.component';
+import { ContactsComponent } from '../contacts/contacts.component';
 @Component({
   selector: 'vk-app-layout',
   standalone: true,
@@ -19,6 +21,8 @@ import { AboutComponent } from '../about/about.component';
     RouterLinkActive,
     HomeComponent,
     AboutComponent,
+    DetailsComponent,
+    ContactsComponent
   ],
   templateUrl: './app-layout.component.html',
   styleUrl: './app-layout.component.scss',
@@ -28,7 +32,7 @@ export class AppLayoutComponent {
     { display: 'Home', value: 'home' },
     { display: 'About', value: 'about' },
     { display: 'What I Know', value: 'what-i-know' },
-    { display: 'Contact-me', value: 'contact-me' },
+    { display: 'Contact Me', value: 'contact-me' },
   ];
   private routerEventSubscriber!: Subscription;
   isLogoHidden: Boolean = false;
